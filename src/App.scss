@@ -1,0 +1,34 @@
+@import "./styles/style.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $app-color-bg;
+  box-sizing: border-box;
+}
+
+.App {
+  margin-left: 240px;
+  padding: 1rem;
+  min-height: 100vh;
+  background: $app-color-bg;
+  color: $app-color-text;
+  font-family: "Kanit", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: lighten($app-color-text, 20%);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: lighten($app-color-text, 40%);
+  }
+}

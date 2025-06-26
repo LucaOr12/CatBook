@@ -1,0 +1,75 @@
+@import "src/styles/style.scss";
+
+.home-container {
+  background: $app-color-bg;
+  color: $app-color-text;
+  font-family: "Kanit", sans-serif;
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  // Per schermi stretti
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+.feed-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: $app-color-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.post-card {
+  background: $app-color-gradient;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 1.25rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .post-date {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.75rem;
+  }
+}
