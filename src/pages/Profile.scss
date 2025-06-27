@@ -1,0 +1,29 @@
+@import "src/styles/style.scss";
+
+.profile-container {
+  background: $app-color-bg;
+  color: $app-color-text;
+  font-family: "Kanit", sans-serif;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.profile-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.profile-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.google-login-button {
+  margin-top: 1.5rem;
+}
