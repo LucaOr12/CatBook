@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import "./Profile.scss";
 
 export default function Profile() {
   const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:5082/api/Users/loggedUser", {
+      method: "GET",
+      credentials: "include",
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Not authenticated");
+        return res.json();
+      })
+      .then((data) => {
+        console.log("✅ Authenticated user:", data);
+        setUserData(data);
+      })
+      .catch(() => {
+        setUserData(null);
+      });
+  }, []);
 
   if (!userData) {
     return (
@@ -12,22 +30,19 @@ export default function Profile() {
         <p>Please log in with Google to view your profile.</p>
         <GoogleLogin
           onSuccess={(credentialResponse) => {
-            console.log("✅ Login Success!");
             const idToken = credentialResponse.credential;
-
             fetch("http://localhost:5082/auth/google", {
               method: "POST",
               headers: {
                 Authorization: `Bearer ${idToken}`,
               },
+              credentials: "include",
             })
-              .then((res) => res.json())
-              .then((data) => {
-                console.log("✅ Dati utente:", data);
-                setUserData(data);
+              .then(() => {
+                window.location.reload();
               })
               .catch((err) => {
-                console.error("❌ Errore invio token:", err);
+                console.error("❌ Login error:", err);
               });
           }}
           onError={() => {
@@ -41,8 +56,6 @@ export default function Profile() {
   return (
     <div style={{ padding: "2rem" }}>
       <h2>🐾 Welcome, {userData.displayName}</h2>
-      <p>Email: {userData.email}</p>
-      {/* Mostra altri dati se vuoi */}
     </div>
   );
 }
