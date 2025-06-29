@@ -4,28 +4,59 @@ import "./Profile.scss";
 
 export default function Profile() {
   const [userData, setUserData] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [form, setForm] = useState({
+    catName: "",
+    breed: "",
+    age: "",
+    bio: "",
+  });
 
   useEffect(() => {
     fetch("http://localhost:5082/api/Users/loggedUser", {
-      method: "GET",
       credentials: "include",
     })
-      .then((res) => {
-        if (!res.ok) throw new Error("Not authenticated");
-        return res.json();
-      })
-      .then((data) => {
-        console.log("✅ Authenticated user:", data);
-        setUserData(data);
-      })
-      .catch(() => {
-        setUserData(null);
-      });
+      .then((res) => res.json())
+      .then((data) => setUserData(data))
+      .catch((err) => console.error(err));
   }, []);
 
-  if (!userData) {
+  const handleChange = (e) => {
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:5082/api/CatProfiles", {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        catName: form.catName,
+        breed: form.breed,
+        age: parseInt(form.age),
+        bio: form.bio,
+      }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Error in creating Cat Profile");
+        return res.json();
+      })
+      .then(() => {
+        setShowModal(false);
+        return fetch("http://localhost:5082/api/Users/loggedUser", {
+          credentials: "include",
+        });
+      })
+      .then((res) => res.json())
+      .then((data) => setUserData(data))
+      .catch((err) => console.error("❌", err));
+  };
+
+  if (!userData)
     return (
-      <div style={{ padding: "2rem" }}>
+      <div className="google-login">
         <h2>👤 Access your Profile</h2>
         <p>Please log in with Google to view your profile.</p>
         <GoogleLogin
@@ -51,11 +82,81 @@ export default function Profile() {
         />
       </div>
     );
-  }
-
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="profile-container">
       <h2>🐾 Welcome, {userData.displayName}</h2>
+
+      {!userData.UserId ? (
+        <>
+          <button onClick={() => setShowModal(true)}>
+            ➕ Create Cat Profile
+          </button>
+
+          {showModal && (
+            <div className="modal">
+              <div className="modal-content">
+                <h3>🐱 Create your Profile!</h3>
+                <form onSubmit={handleSubmit}>
+                  <label>Name:</label>
+                  <input
+                    name="catName"
+                    value={form.catName}
+                    onChange={handleChange}
+                    required
+                  />
+
+                  <label>Breed:</label>
+                  <input
+                    name="breed"
+                    value={form.breed}
+                    onChange={handleChange}
+                    required
+                  />
+
+                  <label>Age:</label>
+                  <input
+                    name="age"
+                    type="number"
+                    min="0"
+                    value={form.age}
+                    onChange={handleChange}
+                    required
+                  />
+
+                  <label>Bio:</label>
+                  <textarea
+                    name="bio"
+                    value={form.bio}
+                    onChange={handleChange}
+                    required
+                  />
+
+                  <br />
+                  <div className="form-buttons">
+                    <button type="button" onClick={() => setShowModal(false)}>
+                      Exit
+                    </button>
+                    <button type="submit">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="cat-profile">
+          <h3>🐱 {userData.profile.catName}</h3>
+          <p>
+            <strong>Breed:</strong> {userData.profile.breed}
+          </p>
+          <p>
+            <strong>Age:</strong> {userData.profile.age}
+          </p>
+          <p>
+            <strong>Bio:</strong> {userData.profile.bio}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
