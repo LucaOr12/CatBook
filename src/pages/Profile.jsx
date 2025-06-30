@@ -86,7 +86,7 @@ export default function Profile() {
     <div className="profile-container">
       <h2>🐾 Welcome, {userData.displayName}</h2>
 
-      {!userData.UserId ? (
+      {!userData.profile ? (
         <>
           <button onClick={() => setShowModal(true)}>
             ➕ Create Cat Profile
@@ -145,16 +145,32 @@ export default function Profile() {
         </>
       ) : (
         <div className="cat-profile">
-          <h3>🐱 {userData.profile.catName}</h3>
-          <p>
-            <strong>Breed:</strong> {userData.profile.breed}
-          </p>
-          <p>
-            <strong>Age:</strong> {userData.profile.age}
-          </p>
-          <p>
-            <strong>Bio:</strong> {userData.profile.bio}
-          </p>
+          <div className="profile-header">
+            <div className="profile-pic">
+              <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D" />
+            </div>
+            <div className="profile-info">
+              <h2>{userData.profile.catName}</h2>
+              <div className="stats">
+                <span>
+                  <strong>12</strong> posts
+                </span>
+                <span>
+                  <strong>200</strong> likes
+                </span>
+              </div>
+              <p className="bio">{userData.profile.bio}</p>
+              <p className="details">
+                <strong>Breed:</strong> {userData.profile.breed} •{" "}
+                <strong>Age:</strong> {userData.profile.age}
+              </p>
+            </div>
+          </div>
+
+          <hr />
+          <div className="profile-posts">
+            <h4>📷 Posts coming soon...</h4>
+          </div>
         </div>
       )}
     </div>

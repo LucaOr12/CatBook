@@ -147,3 +147,70 @@ button {
     filter: brightness(1.1);
   }
 }
+
+.cat-profile {
+  padding: 2rem;
+  color: $app-color-text;
+  font-family: "Kanit", sans-serif;
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid $app-color-accent-end;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .profile-info {
+      flex: 1;
+
+      h2 {
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        color: $app-color-accent-end;
+      }
+
+      .stats {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 0.5rem;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      .bio {
+        font-style: italic;
+        margin-bottom: 0.25rem;
+      }
+
+      .details {
+        font-size: 0.9rem;
+        color: lighten($app-color-text, 20%);
+      }
+    }
+  }
+
+  hr {
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .profile-posts {
+    text-align: center;
+    opacity: 0.5;
+    font-style: italic;
+  }
+}
