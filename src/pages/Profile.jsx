@@ -190,6 +190,10 @@ export default function Profile() {
                         post.postedAt || Date.now()
                       ).toLocaleDateString()}
                     </span>
+                    <div className="post-stats">
+                      <span>👍 {post.likes || 0}</span>
+                      <span>💬 {post.comments?.length || 0}</span>
+                    </div>
                   </div>
                 ))}
               </div>

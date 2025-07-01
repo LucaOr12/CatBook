@@ -32,3 +32,10 @@ a {
     color: lighten($app-color-text, 40%);
   }
 }
+
+@media (max-width: 600px) {
+  .App {
+    margin-left: 0px;
+    margin-bottom: 50px;
+  }
+}

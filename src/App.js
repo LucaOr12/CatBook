@@ -8,7 +8,7 @@ import AccordionNav from './components/AccordionNav';
 function App() {
   return (
     <Router>
-      <div className="App" style={{ marginLeft: '240px', padding: '1rem' }}>
+      <div className="App" style={{ padding: '1rem' }}>
         <AccordionNav />
         <Routes>
           <Route path="/" element={<Home />} />
