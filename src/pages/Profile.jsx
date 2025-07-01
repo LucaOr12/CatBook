@@ -82,6 +82,12 @@ export default function Profile() {
         />
       </div>
     );
+
+  const postsCount = userData?.profile?.posts?.length || 0;
+  const totalLikes = userData?.profile?.posts?.reduce(
+    (sum, post) => sum + (post.likes || 0),
+    0
+  );
   return (
     <div className="profile-container">
       <h2>🐾 Welcome, {userData.displayName}</h2>
@@ -153,10 +159,10 @@ export default function Profile() {
               <h2>{userData.profile.catName}</h2>
               <div className="stats">
                 <span>
-                  <strong>12</strong> posts
+                  <strong>{postsCount}</strong> posts
                 </span>
                 <span>
-                  <strong>200</strong> likes
+                  <strong>{totalLikes}</strong> likes
                 </span>
               </div>
               <p className="bio">{userData.profile.bio}</p>
@@ -169,7 +175,27 @@ export default function Profile() {
 
           <hr />
           <div className="profile-posts">
-            <h4>📷 Posts coming soon...</h4>
+            {userData.profile.posts && userData.profile.posts.length > 0 ? (
+              <div className="posts-grid">
+                {userData.profile.posts.map((post, idx) => (
+                  <div className="post-card" key={idx}>
+                    <img
+                      src={post.imageUrl}
+                      alt={post.caption}
+                      className="post-image"
+                    />
+                    <p className="post-caption">{post.caption}</p>
+                    <span className="post-date">
+                      {new Date(
+                        post.postedAt || Date.now()
+                      ).toLocaleDateString()}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <h4>📭 No posts yet. Start sharing your cat's adventures!</h4>
+            )}
           </div>
         </div>
       )}

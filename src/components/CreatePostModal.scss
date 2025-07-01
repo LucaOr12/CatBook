@@ -1,0 +1,99 @@
+@import "src/styles/style.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .modal-content {
+    background: $app-color-bg;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-family: "Kanit", sans-serif;
+    color: $app-color-text;
+
+    h3 {
+      margin-top: 0;
+      text-align: center;
+      background: $app-color-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-top: 1rem;
+        font-weight: 600;
+        color: $app-color-accent-end;
+      }
+
+      input,
+      textarea {
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        border: 1px solid lighten($app-color-accent-end, 10%);
+        border-radius: 8px;
+        font-family: inherit;
+        background-color: darken($app-color-bg, 3%);
+        color: $app-color-text;
+
+        &::placeholder {
+          color: lighten($app-color-accent-end, 20%);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      .form-buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 1.5rem;
+
+        button {
+          padding: 0.6rem 1.2rem;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          font-family: inherit;
+          transition: background 0.2s ease;
+
+          &:first-of-type {
+            background: transparent;
+            color: lighten($app-color-accent-end, 20%);
+            border: 1px solid lighten($app-color-accent-end, 20%);
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.05);
+            }
+          }
+
+          &:last-of-type {
+            background: $app-color-gradient;
+            color: white;
+
+            &:hover {
+              filter: brightness(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
