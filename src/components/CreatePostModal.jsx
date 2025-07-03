@@ -14,7 +14,7 @@ export default function CreatePostModal({ onClose, onPostCreated }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5082/api/Posts", {
+    fetch("https://catbook-api-ot8w.onrender.com/api/Posts", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -30,7 +30,7 @@ export default function CreatePostModal({ onClose, onPostCreated }) {
         return res.json();
       })
       .then((data) => {
-        onPostCreated(data); // callback to refresh post list
+        onPostCreated(data);
         onClose();
       })
       .catch((err) => console.error("❌ Post creation error:", err));

@@ -13,7 +13,7 @@ export default function Profile() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5082/api/Users/loggedUser", {
+    fetch("https://catbook-api-ot8w.onrender.com/api/Users/loggedUser", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -28,7 +28,7 @@ export default function Profile() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5082/api/CatProfiles", {
+    fetch("https://catbook-api-ot8w.onrender.com/api/CatProfiles", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -45,9 +45,12 @@ export default function Profile() {
       })
       .then(() => {
         setShowModal(false);
-        return fetch("http://localhost:5082/api/Users/loggedUser", {
-          credentials: "include",
-        });
+        return fetch(
+          "https://catbook-api-ot8w.onrender.com/api/Users/loggedUser",
+          {
+            credentials: "include",
+          }
+        );
       })
       .then((res) => res.json())
       .then((data) => setUserData(data))
@@ -62,7 +65,7 @@ export default function Profile() {
         <GoogleLogin
           onSuccess={(credentialResponse) => {
             const idToken = credentialResponse.credential;
-            fetch("http://localhost:5082/auth/google", {
+            fetch("https://catbook-api-ot8w.onrender.com/auth/google", {
               method: "POST",
               headers: {
                 Authorization: `Bearer ${idToken}`,

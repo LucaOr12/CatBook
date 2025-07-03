@@ -7,7 +7,7 @@ function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5082/api/Posts/all", {
+    fetch("https://catbook-api-ot8w.onrender.com/api/Posts/all", {
       credentials: "include",
     })
       .then((res) => {
