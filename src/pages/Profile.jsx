@@ -14,11 +14,17 @@ export default function Profile() {
 
   useEffect(() => {
     fetch("https://catbook-api-ot8w.onrender.com/api/Users/loggedUser", {
+      method: "GET",
       credentials: "include",
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`❌ HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => setUserData(data))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error("❌ Login fetch error:", err));
   }, []);
 
   const handleChange = (e) => {
