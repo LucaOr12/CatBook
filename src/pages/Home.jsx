@@ -7,22 +7,38 @@ function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://catbook-api-ot8w.onrender.com/api/Posts/all", {
-      credentials: "include",
-    })
-      .then((res) => {
+    async function fetchPosts() {
+      try {
+        const res = await fetch(
+          "https://catbook-api-ot8w.onrender.com/api/Posts/all",
+          {
+            credentials: "include",
+          }
+        );
+
         if (!res.ok) throw new Error("Failed to fetch posts");
-        return res.json();
-      })
-      .then((data) => {
+
+        const data = await res.json();
         setPosts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("❌ Error fetching posts:", err);
-        setError(err.message);
+
+        try {
+          const fallbackResp = await fetch("/posts-fallback.json");
+          if (!fallbackResp.ok) throw new Error("Failed to fetch fallback");
+
+          const fallbackData = await fallbackResp.json();
+          setPosts(fallbackData);
+        } catch (fallbackErr) {
+          console.error("❌ Error loading fallback posts:", fallbackErr);
+          setError("Error loading fallback posts");
+        }
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+
+    fetchPosts();
   }, []);
 
   if (loading) return <div className="home-container">Loading posts...</div>;
@@ -39,10 +55,7 @@ function Home() {
         ) : (
           posts.map((post) => (
             <div key={post.id} className="post-card">
-              <img
-                src={post.imageUrl}
-                alt={`Foto di ${post.catName || "cat"}`}
-              />
+              <img src={post.imageUrl} alt={`of ${post.catName || "cat"}`} />
               <div className="post-content">
                 <h3>{post.catName || "Unknown Cat"}</h3>
                 <p>{post.caption}</p>
@@ -51,7 +64,7 @@ function Home() {
                 </span>
                 <div className="post-stats">
                   <span>👍 {post.likes || 0}</span>
-                  <span>💬 {post.comments?.length || 0}</span>
+                  <span>💬 {post.comments?.length || post.comments || 0}</span>
                 </div>
               </div>
             </div>

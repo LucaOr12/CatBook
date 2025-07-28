@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "catName": "Whiskerstein",
+    "imageUrl": "https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg",
+    "caption": "I don’t trust humans before coffee ☕",
+    "postedAt": "2025-07-26T08:30:00Z",
+    "likes": 3000,
+    "comments": 12
+  },
+  {
+    "id": 2,
+    "catName": "Mittens",
+    "imageUrl": "https://wpcdn.web.wsu.edu/cahnrs/uploads/sites/4/cat2-1024x676.jpg",
+    "caption": "Dreaming of tuna... again 💤🐟",
+    "postedAt": "2025-07-26T10:45:00Z",
+    "likes": 1800,
+    "comments": 6
+  },
+  {
+    "id": 3,
+    "catName": "Shadowpaw",
+    "imageUrl": "https://cdn2.thecatapi.com/images/8fi.jpg",
+    "caption": "I see things humans can’t. Mostly snacks.",
+    "postedAt": "2025-07-25T20:15:00Z",
+    "likes": 2200,
+    "comments": 10
+  },
+  {
+    "id": 4,
+    "catName": "Luna Meow",
+    "imageUrl": "https://cdn2.thecatapi.com/images/bpc.jpg",
+    "caption": "Don’t touch my belly. Ever.",
+    "postedAt": "2025-07-25T16:10:00Z",
+    "likes": 2600,
+    "comments": 9
+  },
+  {
+    "id": 5,
+    "catName": "Sir Fluffington",
+    "imageUrl": "https://cdn2.thecatapi.com/images/c0v.jpg",
+    "caption": "I knocked it down on purpose. You’re welcome.",
+    "postedAt": "2025-07-25T14:40:00Z",
+    "likes": 3400,
+    "comments": 17
+  },
+  {
+    "id": 6,
+    "catName": "Princess Purr",
+    "imageUrl": "https://cdn2.thecatapi.com/images/9of.jpg",
+    "caption": "No, you may not sit here. This pillow is mine.",
+    "postedAt": "2025-07-25T12:25:00Z",
+    "likes": 4000,
+    "comments": 21
+  },
+  {
+    "id": 7,
+    "catName": "Tigerclaw",
+    "imageUrl": "https://cdn2.thecatapi.com/images/7bt.jpg",
+    "caption": "Training for the next zoomies marathon 🏃‍♂️💨",
+    "postedAt": "2025-07-26T06:20:00Z",
+    "likes": 1700,
+    "comments": 4
+  },
+  {
+    "id": 8,
+    "catName": "Mochi",
+    "imageUrl": "https://cdn2.thecatapi.com/images/ai6.jpg",
+    "caption": "Sunbeam acquired. Happiness level: 9000 ☀️",
+    "postedAt": "2025-07-26T09:50:00Z",
+    "likes": 2100,
+    "comments": 8
+  },
+  {
+    "id": 9,
+    "catName": "Napoleon",
+    "imageUrl": "https://cdn2.thecatapi.com/images/6qi.jpg",
+    "caption": "Ruler of the living room and beyond 👑",
+    "postedAt": "2025-07-24T23:00:00Z",
+    "likes": 5000,
+    "comments": 33
+  },
+  {
+    "id": 10,
+    "catName": "Salem",
+    "imageUrl": "https://cdn2.thecatapi.com/images/bpc.jpg",
+    "caption": "Practicing dark arts and long naps 🧙‍♂️🖤",
+    "postedAt": "2025-07-24T21:30:00Z",
+    "likes": 4200,
+    "comments": 18
+  },
+  {
+    "id": 11,
+    "catName": "Garbanzo",
+    "imageUrl": "https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg",
+    "caption": "Yes, I blinked in every photo. On purpose.",
+    "postedAt": "2025-07-25T18:15:00Z",
+    "likes": 1200,
+    "comments": 3
+  },
+  {
+    "id": 12,
+    "catName": "Zelda",
+    "imageUrl": "https://cdn2.thecatapi.com/images/9bt.jpg",
+    "caption": "Legend of nap time begins now.",
+    "postedAt": "2025-07-25T10:40:00Z",
+    "likes": 2800,
+    "comments": 11
+  },
+  {
+    "id": 13,
+    "catName": "Beans",
+    "imageUrl": "https://cdn2.thecatapi.com/images/6iq.jpg",
+    "caption": "Toe beans are for looking, not touching.",
+    "postedAt": "2025-07-26T07:05:00Z",
+    "likes": 1500,
+    "comments": 7
+  },
+  {
+    "id": 14,
+    "catName": "Tuna",
+    "imageUrl": "https://cdn2.thecatapi.com/images/9oo.jpg",
+    "caption": "If I fits, I sits. End of story.",
+    "postedAt": "2025-07-25T22:45:00Z",
+    "likes": 1900,
+    "comments": 5
+  },
+  {
+    "id": 15,
+    "catName": "Fang",
+    "imageUrl": "https://cdn2.thecatapi.com/images/bhb.jpg",
+    "caption": "Look into my eyes. Bring me chicken.",
+    "postedAt": "2025-07-24T19:10:00Z",
+    "likes": 3800,
+    "comments": 25
+  },
+  {
+    "id": 16,
+    "catName": "Pickles",
+    "imageUrl": "https://cdn2.thecatapi.com/images/bqd.jpg",
+    "caption": "Climbed the curtain again. Still no regrets.",
+    "postedAt": "2025-07-26T05:55:00Z",
+    "likes": 2300,
+    "comments": 6
+  },
+  {
+    "id": 17,
+    "catName": "Biscuit",
+    "imageUrl": "https://static.scientificamerican.com/sciam/cache/file/2AE14CDD-1265-470C-9B15F49024186C10_source.jpg?w=1200",
+    "caption": "*kneads aggressively* This is my biscuit now.",
+    "postedAt": "2025-07-26T06:40:00Z",
+    "likes": 3100,
+    "comments": 13
+  },
+  {
+    "id": 18,
+    "catName": "Stormy",
+    "imageUrl": "https://cdn2.thecatapi.com/images/duo.jpg",
+    "caption": "Thunder outside. I’m under the couch. Brave.",
+    "postedAt": "2025-07-25T15:00:00Z",
+    "likes": 1400,
+    "comments": 4
+  },
+  {
+    "id": 19,
+    "catName": "Pumpkin",
+    "imageUrl": "https://cdn2.thecatapi.com/images/cml.jpg",
+    "caption": "Fall is my aesthetic. So are naps. 🍁",
+    "postedAt": "2025-07-25T09:10:00Z",
+    "likes": 2700,
+    "comments": 9
+  },
+  {
+    "id": 20,
+    "catName": "Socks",
+    "imageUrl": "https://cdn2.thecatapi.com/images/cga.jpg",
+    "caption": "Not wearing actual socks. False advertising?",
+    "postedAt": "2025-07-25T11:30:00Z",
+    "likes": 1600,
+    "comments": 5
+  },
+  {
+    "id": 21,
+    "catName": "Cinnamon",
+    "imageUrl": "https://cdn2.thecatapi.com/images/29h.jpg",
+    "caption": "This sunbeam is taken. Try again later.",
+    "postedAt": "2025-07-26T11:45:00Z",
+    "likes": 900,
+    "comments": 1
+  },
+  {
+    "id": 22,
+    "catName": "Velvet",
+    "imageUrl": "https://cdn2.thecatapi.com/images/cih.jpg",
+    "caption": "Purring is an art. I’m a master.",
+    "postedAt": "2025-07-24T18:20:00Z",
+    "likes": 3300,
+    "comments": 19
+  },
+  {
+    "id": 23,
+    "catName": "Yuki",
+    "imageUrl": "https://cdn2.thecatapi.com/images/dml.jpg",
+    "caption": "Snow outside. I'm staying right here 🐾❄️",
+    "postedAt": "2025-07-25T08:00:00Z",
+    "likes": 2900,
+    "comments": 16
+  },
+  {
+    "id": 24,
+    "catName": "Smudge",
+    "imageUrl": "https://cdn2.thecatapi.com/images/bkt.jpg",
+    "caption": "Don't judge me. You’d sleep 18 hours too.",
+    "postedAt": "2025-07-25T17:25:00Z",
+    "likes": 2700,
+    "comments": 8
+  },
+  {
+    "id": 25,
+    "catName": "Gizmo",
+    "imageUrl": "https://www.communitycatspodcast.com/wp-content/uploads/2023/03/Cat6-800x800.jpg",
+    "caption": "Computer warm = cat seat",
+    "postedAt": "2025-07-26T07:30:00Z",
+    "likes": 1500,
+    "comments": 6
+  },
+  {
+    "id": 26,
+    "catName": "Maple",
+    "imageUrl": "https://cdn2.thecatapi.com/images/dvj.jpg",
+    "caption": "Caught the laser once. Legend status.",
+    "postedAt": "2025-07-24T20:50:00Z",
+    "likes": 2400,
+    "comments": 11
+  },
+  {
+    "id": 27,
+    "catName": "Onyx",
+    "imageUrl": "https://cdn2.thecatapi.com/images/e35.jpg",
+    "caption": "Midnight zoomies initiated. Everyone beware.",
+    "postedAt": "2025-07-25T01:30:00Z",
+    "likes": 2900,
+    "comments": 14
+  },
+  {
+    "id": 28,
+    "catName": "Pebbles",
+    "imageUrl": "https://cdn2.thecatapi.com/images/eap.jpg",
+    "caption": "I attack plants. No regrets. 🌿",
+    "postedAt": "2025-07-25T13:55:00Z",
+    "likes": 1000,
+    "comments": 3
+  },
+  {
+    "id": 29,
+    "catName": "Sushi",
+    "imageUrl": "https://cdn2.thecatapi.com/images/edc.jpg",
+    "caption": "Please sir, can I have some more?",
+    "postedAt": "2025-07-26T09:00:00Z",
+    "likes": 3500,
+    "comments": 18
+  },
+  {
+    "id": 30,
+    "catName": "Nugget",
+    "imageUrl": "https://cdn2.thecatapi.com/images/ee4.jpg",
+    "caption": "Small but fierce. Mostly small.",
+    "postedAt": "2025-07-26T10:15:00Z",
+    "likes": 1100,
+    "comments": 4
+  }
+]
